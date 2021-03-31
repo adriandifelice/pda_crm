@@ -1,0 +1,24 @@
+{
+  "name": "pda_crm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriandifelice/pda_crm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriandifelice/pda_crm/issues"
+  },
+  "homepage": "https://github.com/adriandifelice/pda_crm#readme",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "prettier": "^2.2.1"
+  }
+}
