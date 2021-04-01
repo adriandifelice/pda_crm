@@ -1,7 +1,7 @@
 const ClientModel = require('./models/client')
 
 
-async function getClients(req, res) {
+async function getClients(_, res) {
     const clients = await ClientModel.find({});
     try {
       res.send(clients);
@@ -23,7 +23,11 @@ async function addClient(req, res) {
    }
 
 
-
-
+async function editClient(req, res) {
+  
+}   
+async function deleteClient(req, res) {
+  
+}   
 
 module.exports={ getClients, addClient};
