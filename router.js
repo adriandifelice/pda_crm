@@ -4,8 +4,9 @@ const { getClients, addClient} = require('./controllers')
 const router = express.Router();
 
 
-router.get('/', getClients);
+// basic routes
 
+router.get('/', getClients);
 router.post("/", addClient);
   
 
