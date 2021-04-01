@@ -13,18 +13,9 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
       console.log('running on port 🎾', PORT)
   }))
     .catch(e => console.log('error', e))
-    
 
 
 app.use(cors());
 app.use(express.json());
 app.use(Router);
 
-
-
-
-
-
-// app.listen(PORT, () => {
-//   console.log('running on port 🎾', PORT)
-// })
