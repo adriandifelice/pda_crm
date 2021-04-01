@@ -24,10 +24,12 @@ async function addClient(req, res) {
 
 
 async function editClient(req, res) {
-  
+
 }   
 async function deleteClient(req, res) {
   
 }   
 
-module.exports={ getClients, addClient};
+
+
+module.exports={ getClients, addClient, sum};
