@@ -23,13 +23,20 @@ async function addClient(req, res) {
    }
 
 
+
+
 async function editClient(req, res) {
 
 }   
 async function deleteClient(req, res) {
   
-}   
+}  
+
+async function getYelpData (req, res) {
+console.log('something here 🥖', req.body);
+res.send('response sent ');
+}
 
 
 
-module.exports={ getClients, addClient, sum};
+module.exports={ getClients, addClient, getYelpData};
