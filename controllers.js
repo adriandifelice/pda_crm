@@ -14,7 +14,6 @@ async function getClients(_, res) {
     }
   }
 
-
 async function addClient(req, res) {
     console.log(req.body)
      const client = new ClientModel(req.body);
@@ -26,28 +25,41 @@ async function addClient(req, res) {
      }
    }
 
-
-   async function getProspect(_, res) {
+async function getProspects(_, res) {
     const prospects = await ProspectModel.find({});
     try {
+      console.log(prospects)
       res.send(prospects);
     } catch (error) {
       res.status(500).send(error);
     }
   }
-async function addProspect (req, res){
-  console.log(req.body);
-  const prospect = new ProspectModel(req.body);
+
+async function deleteProspect (req, res){
+  console.log('deleting');
+  const id= req.body.id;
   try {
-    console.log('before save');
+    const deleted = await ProspectModel.findByIdAndDelete(id, function(err){
+      if (err) {
+        res.send(err)
+      }
+    });
+    res.status(200).send(id);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
+
+async function addProspect (req, res){
+  const prospect =  new ProspectModel(req.body);
+  try {
     await prospect.save();
-    console.log('after save')
     res.send(prospect);
   } catch (error) {
     res.status(500).send(error);
   }
-  
 }
+
 
 
 async function editClient(req, res) {
@@ -82,4 +94,4 @@ async function getYelpData (req, res) {
 
 
 
-module.exports={ getClients, addClient, getYelpData, addProspect, getProspect};
+module.exports={ getClients, addClient, getYelpData, addProspect, getProspects, deleteProspect};
