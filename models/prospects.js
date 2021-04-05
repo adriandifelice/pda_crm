@@ -38,6 +38,11 @@ const ProspectSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
+  restaurantUrl: {
+    type: String,
+    trim: true,
+    lowercase: true,
+  },
   contactEmail: {
     type: String,
     trim: true,
