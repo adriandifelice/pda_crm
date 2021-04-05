@@ -6,6 +6,7 @@ const ClientSchema = new mongoose.Schema({
     type: String,
     trim: true,
     lowercase: true,
+    required:true
   },
   contactEmail: {
     type: String,
@@ -18,6 +19,11 @@ const ClientSchema = new mongoose.Schema({
     lowercase: true,
   },
   reference: {
+    type: String,
+    trim: true,
+    lowercase: true,
+  },
+  salesRep: {
     type: String,
     trim: true,
     lowercase: true,
