@@ -62,9 +62,28 @@ async function addProspect (req, res){
 
 
 
-async function editClient(req, res) {
+async function updateStatus(req, res) {
 
-}   
+  console.log('updating status', req.body.status);
+  const id= req.body.id;
+  const status = req.body.status;
+  
+  try {
+    const updated = await ProspectModel.updateOne({_id:id}, 
+        {status:status}, function (err) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            console.log("Updated Status");
+        }
+    }); 
+    res.status(200).send(updated);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};   
+
 async function deleteClient(req, res) {
   
 }  
@@ -94,4 +113,4 @@ async function getYelpData (req, res) {
 
 
 
-module.exports={ getClients, addClient, getYelpData, addProspect, getProspects, deleteProspect};
+module.exports={ getClients, addClient, getYelpData, addProspect, getProspects, deleteProspect, updateStatus};
