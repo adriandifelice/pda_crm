@@ -6,12 +6,14 @@ const ProspectSchema = new mongoose.Schema({
     type: String,
     trim: true,
     lowercase: true,
+    unique:true,
   },
   businessName: {
     type: String,
     trim: true,
     lowercase: true,
-    required:true
+    required:true,
+    unique:true,
   },
   displayPhone: {
     type: String,
@@ -53,6 +55,9 @@ const ProspectSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   }, 
+  status:{
+    type:String,
+  },
 });
 
 const Prospect = mongoose.model("Prospects", ProspectSchema);
