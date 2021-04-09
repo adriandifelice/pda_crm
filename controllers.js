@@ -15,7 +15,6 @@ async function getClients(_, res) {
   }
 
 async function addClient(req, res) {
-    console.log(req.body)
      const client = new ClientModel(req.body);
      try {
        await client.save();
@@ -36,7 +35,6 @@ async function getProspects(_, res) {
   }
 
 async function deleteProspect (req, res){
-  console.log('deleting');
   const id= req.body.id;
   try {
     const deleted = await ProspectModel.findByIdAndDelete(id, function(err){
@@ -49,25 +47,23 @@ async function deleteProspect (req, res){
     res.status(500).send(error);
   }
 }
-
+ 
 async function addProspect (req, res){
   const prospect =  new ProspectModel(req.body);
-  try {
-    await prospect.save();
-    res.send(prospect);
-  } catch (error) {
-    res.status(500).send(error);
+    try {
+    const result = await prospect.save();
+    res.send(result);
+  } catch (error) { 
+    res.send('Here the error', error);
   }
-}
-
+};
+   
+  
 
 
 async function updateStatus(req, res) {
-
-  console.log('updating status', req.body.status);
   const id= req.body.id;
   const status = req.body.status;
-  
   try {
     const updated = await ProspectModel.updateOne({_id:id}, 
         {status:status}, function (err) {

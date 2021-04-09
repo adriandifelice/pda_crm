@@ -21,10 +21,10 @@ const ProspectSchema = new mongoose.Schema({
     lowercase: true,
   },
   phone: {
-    type: String,
+    type: String, 
     trim: true,
     lowercase: true,
-  },
+  }, 
   price: {
     type: String,
     trim: true,
@@ -33,7 +33,7 @@ const ProspectSchema = new mongoose.Schema({
   address: {
     type: String,
     trim: true,
-    lowercase: true,
+    lowercase: true, 
   },
   url: {
     type: String,
