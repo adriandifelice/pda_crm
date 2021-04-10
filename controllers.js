@@ -49,6 +49,9 @@ async function deleteProspect (req, res){
 }
  
 async function addProspect (req, res){
+  const userInProspects = await ProspectModel.exists({ businessName: req.body.businessName });
+  if (userInProspects) {res.send({mess:'user exists'})}
+  
   const prospect =  new ProspectModel(req.body);
     try {
     const result = await prospect.save();
