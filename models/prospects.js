@@ -19,8 +19,13 @@ const ProspectSchema = new mongoose.Schema({
     type: String,
     trim: true,
     lowercase: true,
-    required:true,
-    unique:true,
+  
+  },
+  contactTitle: {
+    type: String,
+    trim: true,
+    lowercase: true,
+    
   },
   displayPhone: {
     type: String,
