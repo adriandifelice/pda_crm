@@ -70,6 +70,9 @@ const ProspectSchema = new mongoose.Schema({
   status:{
     type:String,
   },
+  category:{
+    type:String,
+  },
 });
 
 const Prospect = mongoose.model("Prospects", ProspectSchema);
